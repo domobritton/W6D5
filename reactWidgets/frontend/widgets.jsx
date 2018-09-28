@@ -1,10 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Clock from './clock';
+import Tabs from './tabs';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const root = document.getElementById('root');
-  ReactDOM.render(
-    <Clock />, root
-  );
-});
+const Widgets = (props) => (
+  [
+    <Clock />,
+    <Tabs
+      folders={
+        [
+          {title: 'TabOne', content: 'One'},
+          {title: 'TabTwo', content: 'Two'},
+          {title: 'TabThree', content: 'Three'}
+        ]
+      }/>
+  ]
+);
+
+export default Widgets;

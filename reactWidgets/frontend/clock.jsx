@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Tabs from './tabs';
 
 class Clock extends React.Component {
   constructor(props) {
@@ -20,14 +20,23 @@ class Clock extends React.Component {
   }
 
   render() {
+    const folder = ['one', 'two', 'three'];
     return (
-      <h1>
-      <ul>
-      <li>Hours: {this.state.date.getHours() % 12}</li>
-      <li>Minutes: {this.state.date.getMinutes()}</li>
-      <li>Seconds: {this.state.date.getSeconds()}</li>
-      </ul>
-      </h1>
+      <div>
+        <h2>Clock</h2>
+          <ul>
+            <li>Hours: {this.state.date.getHours() % 12}</li>
+            <li>Minutes: {this.state.date.getMinutes()}</li>
+            <li>Seconds: {this.state.date.getSeconds()}</li>
+          </ul>
+          <h2>Date</h2>
+          <ul>
+            <li>{this.state.date.getFullYear()}</li>
+            <li>{this.state.date.getMonth()}</li>
+            <li>{this.state.date.getDay()}</li>
+          </ul>
+          <Tabs />
+      </div>
     );
   }
 }
