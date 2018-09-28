@@ -1,0 +1,11 @@
+#root {
+  font-family: "Open Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 70px;
+  text-align: center;
+}
+li {
+  list-style: none;
+}
