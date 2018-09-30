@@ -70,7 +70,7 @@ class Weather extends React.Component {
                     <h4>Weather</h4>
                     <span><i className={klass}></i></span>
                     <p>{weather.name}</p>
-                    <p>{temp.toFixed(1)}degrees</p>
+                    <p>{temp.toFixed(1)} degrees</p>
                     <p>{conditions}</p>
                     <p>{this.error}</p>
                   </div>;

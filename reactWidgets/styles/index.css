@@ -1,8 +1,10 @@
 body {
-  /* display: flex; */
-  /* justify-content: center; */
+  display: flex;
+  justify-content: center;
 	width: 100vw;
-	height: 90vh;
+	height: 100vh;
+  margin: 0;
+  padding: 0;
 	color: #fff;
 	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
 	background-size: 400% 400%;
@@ -51,6 +53,8 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   font-family: "Open Sans";
   font-size: 24px;
   font-style: normal;
@@ -59,11 +63,13 @@ body {
 }
 
 .clockDiv {
-  margin: 100px;
+  margin: 100px 0 0 0;
+  align-self: flex-start;
   border: 2px solid #fff;
   border-radius: 15px;
   padding: 20px;
   width: 350px;
+  max-width: 50%;
   height: 300px;
 }
 .clockDiv p {
@@ -72,11 +78,10 @@ body {
 
 .tabDiv {
   display: flex;
-  margin-left: 100px;
-  margin-bottom: 100px;
+  margin: 0 100px 100px 0;
   border: 2px solid #fff;
   border-radius: 15px;
-  width: 350px;
+  max-width: 50%;
   height: 310px;
 }
 
@@ -85,12 +90,53 @@ body {
   color: rgba(255, 255, 255, 0.18);
 }
 
+.autoDiv {
+  position: relative;
+  margin: 0 0 100px 100px;
+  padding-left: 20px;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  width: 350px;
+  max-width: 50%;
+  height: 310px;
+}
+
+.autoDiv li {
+  list-style: none;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+.autoDiv h4 {
+  margin-top: -50px;
+  color: rgba(255, 255, 255, 0.18);
+}
+form {
+  position: absolute;
+  left: 50%;
+}
+input[type=text] {
+  height: 25px;
+  width: 130px;
+  padding-left: 5px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
 .weatherDiv {
-  margin: 100px;
+  margin: 100px 0 100px 100px;
   border: 2px solid #fff;
   border-radius: 15px;
   padding: 20px;
   width: 350px;
+  max-width: 50%;
   height: 300px;
 }
 .weatherDiv h4 {
