@@ -1,7 +1,7 @@
 body {
   display: flex;
   justify-content: center;
-	width: 100wh;
+	width: 100vw;
 	height: 90vh;
 	color: #fff;
 	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
@@ -49,6 +49,7 @@ body {
 
 #root {
   display: flex;
+  justify-content: center;
   align-items: center;
   font-family: "Open Sans";
   font-size: 24px;
@@ -56,6 +57,70 @@ body {
   font-weight: 700;
   line-height: 40px;
 }
-li {
+
+.clockDiv {
+  border: 2px solid #fff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 350px;
+  height: 300px;
+}
+.clockDiv p {
+  color: rgba(255, 255, 255, 0.18);
+}
+
+.tabDiv {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 200px;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  width: 350px;
+  height: 310px;
+}
+
+.tabDiv h4 {
+  margin-top: -50px;
+  color: rgba(255, 255, 255, 0.18);
+}
+
+ul.tabHeader {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+}
+
+.tabHeader li {
   list-style: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 12px;
+  display: inline-block;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 0;
+}
+
+.tab-content {
+  position: relative;
+  height: 230px;
+  width: 350px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid #fff;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  top: 80px;
+  margin-left: -230px;
+}
+
+article {
+  margin-left: 20px;
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.12);
 }

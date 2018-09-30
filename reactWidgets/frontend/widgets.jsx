@@ -1,6 +1,7 @@
 import React from 'react';
 import Clock from './clock';
 import Tabs from './tabs';
+import Weather from './weather';
 
 const Widgets = (props) => (
   [
@@ -8,9 +9,9 @@ const Widgets = (props) => (
     <Tabs
       folders={
         [
-          {title: 'TabOne', content: 'One'},
-          {title: 'TabTwo', content: 'Two'},
-          {title: 'TabThree', content: 'Three'}
+          {title: 'TabOne', content: 'One', id: 10},
+          {title: 'TabTwo', content: 'Two', id: 11},
+          {title: 'TabThree', content: 'Three', id: 12}
         ]
       }/>
   ]
