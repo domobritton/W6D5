@@ -14,6 +14,11 @@ class Weather extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      weather: null
+
+    };
+    this.error = '';
     this.getWeather = this.getWeather.bind(this);
   }
 
@@ -21,34 +26,55 @@ class Weather extends React.Component {
     navigator.geolocation.getCurrentPosition(this.getWeather);
   }
 
-  getWeather(position) {
+  getWeather(location) {
     let url = 'http://api.openweathermap.org/data/2.5/weather?';
     const params = {
       lat: location.coords.latitude,
-      long: location.coords.longiutude
+      lon: location.coords.longitude
     };
     url += toQueryString(params);
     const api = 'c1b7fb84ee830c68f338f676ec318450';
     url += `&APPID=${api}`;
 
-    // const xmlhttp = new XMLHttpRequest();
-    //
-    // xmlhttp.onreadystatechange = () => {
-    //     if (xmlhttp.readyState == XMLHttpRequest.DONE) {   // XMLHttpRequest.DONE == 4
-    //        if (xmlhttp.status == 200) {
-    //            document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
-    //        }
-    //        else if (xmlhttp.status == 400) {
-    //           alert('There was an error 400');
-    //        }
-    //        else {
-    //            alert('something else other than 200 was returned');
-    //        }
-    //     }
-    // };
-    //
-    // xmlhttp.open("GET", "ajax_info.txt", true);
-    // xmlhttp.send();
+    const xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = () => {
+        if (xmlhttp.readyState === XMLHttpRequest.DONE) {
+           if (xmlhttp.status === 200) {
+            const data = JSON.parse(xmlhttp.responseText);
+            this.setState({weather: data});
+           }
+           else if (xmlhttp.status === 400) {
+              this.error = 'There was an error 400';
+           }
+           else {
+              this.error = 'something else other than 200 was returned';
+           }
+        }
+    };
+
+    xmlhttp.open('GET', url, true);
+    xmlhttp.send();
+  }
+
+  render() {
+    let content = <div></div>;
+    if (this.state.weather) {
+      const weather = this.state.weather;
+      const temp = (weather.main.temp - 273.15) * 1.8 + 32;
+      const code = weather[0].id;
+      content =   <div className='weatherDiv'>
+                    <h4>Weather</h4>
+                    <p>{weather.name}</p>
+                    <p>{temp.toFixed(1)}degrees</p>
+                    <p>{this.error}</p>
+                  </div>;
+    }
+    return (
+      <div>
+        {content}
+      </div>
+    );
   }
 }
 

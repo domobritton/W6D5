@@ -13,7 +13,8 @@ const Widgets = (props) => (
           {title: 'TabTwo', content: 'Two', id: 11},
           {title: 'TabThree', content: 'Three', id: 12}
         ]
-      }/>
+      }/>,
+    <Weather />
   ]
 );
 
