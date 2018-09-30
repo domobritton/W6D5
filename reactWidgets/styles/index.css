@@ -72,7 +72,8 @@ body {
 
 .tabDiv {
   display: flex;
-  margin: 100px;
+  margin-left: 100px;
+  margin-bottom: 100px;
   border: 2px solid #fff;
   border-radius: 15px;
   width: 350px;
@@ -85,15 +86,18 @@ body {
 }
 
 .weatherDiv {
-  margin-left: 100px;
+  margin: 100px;
   border: 2px solid #fff;
   border-radius: 15px;
   padding: 20px;
   width: 350px;
-  height: 310px;
+  height: 300px;
 }
 .weatherDiv h4 {
   color: rgba(255, 255, 255, 0.18);
+}
+.weatherDiv span {
+  float: right;
 }
 
 ul.tabHeader {

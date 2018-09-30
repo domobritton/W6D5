@@ -60,18 +60,23 @@ class Weather extends React.Component {
   render() {
     let content = <div></div>;
     if (this.state.weather) {
+      console.log(this.state.weather);
       const weather = this.state.weather;
       const temp = (weather.main.temp - 273.15) * 1.8 + 32;
-      const code = weather[0].id;
-      content =   <div className='weatherDiv'>
+      const code = weather.weather[0].id;
+      const klass = `owf owf-${code} owf-3x`;
+      const conditions = weather.weather[0].description;
+      content =   <div>
                     <h4>Weather</h4>
+                    <span><i className={klass}></i></span>
                     <p>{weather.name}</p>
                     <p>{temp.toFixed(1)}degrees</p>
+                    <p>{conditions}</p>
                     <p>{this.error}</p>
                   </div>;
     }
     return (
-      <div>
+      <div className = 'weatherDiv'>
         {content}
       </div>
     );
